@@ -1,0 +1,1 @@
+json.array! @pvprovisions, partial: 'pvprovisions/pvprovision', as: :pvprovision

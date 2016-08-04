@@ -1,0 +1,1 @@
+json.array! @pvcrequests, partial: 'pvcrequests/pvcrequest', as: :pvcrequest

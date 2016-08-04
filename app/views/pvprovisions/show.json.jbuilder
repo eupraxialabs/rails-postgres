@@ -1,0 +1,1 @@
+json.partial! "pvprovisions/pvprovision", pvprovision: @pvprovision

@@ -1,0 +1,147 @@
+<html>
+<head>
+<p id="notice"><%= notice %></p>
+
+<h1>Persistent Volume Claims</h1>
+
+<link
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
+ 	rel="stylesheet" type="text/css" />
+<script
+ 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"
+ 	type="text/javascript">
+</script>
+<script
+ 	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"
+ 	type="text/javascript">
+</script>
+<script
+	type="text/javascript" src="/assets/app.js">
+</script>
+<script
+	type="text/javascript" src="/assets/jquery.tablesorter.js">
+</script>
+<script
+	type="text/javascript" src="/assets/jquery.tablesorter.widgets.js">
+</script>
+
+<style type="text/css">
+
+h1 {
+	text-align: center;
+	color: #226389;
+  currentColor;
+}
+
+.focus-highlight td:focus::after, .focus-highlight th:focus::after,
+.hover-highlight td:hover::after, .hover-highlight th:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 999em;
+  left: 0;
+  top: -555em;
+  z-index: -1;
+}
+
+
+body {
+	color: white;
+	background-color: lightgrey;
+}
+table {
+ border: 1px black solid;
+ border-collapse: collapse;
+ border-bottom: 1px black solid;
+ width: auto;
+}
+
+th {
+ background-color: white;
+ color: #226389;
+ text-align:center;
+ padding-left: 10px;
+ border-bottom: 1px black solid;
+ height: 50px;
+}
+
+tr {
+ background-color: #696767
+ color: white;
+ margin: 1px;
+ text-align: center;
+}
+
+.shaded {
+ background-color: #226389;
+}
+
+td {
+ padding-left: 10px;
+ text-align:center;
+}
+.border-bottom {
+ border-bottom: solid black 1px;
+}
+</style>
+
+<script type="text/JavaScript">
+    $(document).ready(function(){
+  		$("#pvcTable").tablesorter({sortList: [[0,0], [1,0]] });
+});
+</script>
+<script type="text/JavaScript">
+    $(document).ready(function() {
+      $("table#pvcTable tr:nth-child(even)").addClass("shaded");
+      });
+</script>
+
+<script type="text/JavaScript">
+	$(document).ready (function() {
+  	// call the tablesorter plugin
+  	   	$("table").tablesorter({
+    			theme: 'blue'
+  		});
+
+  // Make table cell focusable
+  // http://css-tricks.com/simple-css-row-column-highlighting/
+  		if ( $('.focus-highlight').length ) {
+    			$('.focus-highlight').find('td, th')
+      				.attr('tabindex', '1')
+      		// add touch device support
+      			.on('touchstart', function() {
+        			$(this).focus();
+      			});
+		}
+	});
+</script>
+</head>
+<body>
+<table id="pvcTable" class="tablesorter">
+  <thead>
+    <tr>
+       <th>Project Name</th>
+       <th>Claim Name</th>
+       <th>Storage Required</th>
+       <th>Access Mode</th>
+       <th>Current Phase</th>
+			 <th>Requested by Application</th>
+			 <th>Available to Application</th>
+    <tr>
+  </thead>
+  <tbody>
+    <% @pvcrequests.each do |pvcrequest| %>
+      <tr class="border-bottom">
+        <td><%= pvcrequest.namespace %></td>
+        <td><%= pvcrequest.name %></td>
+        <td><%= pvcrequest.storage %></td>
+        <td><%= pvcrequest.accessmode %></td>
+        <td><%= pvcrequest.phase %></td>
+				<td><%= pvcrequest.creationtimestamp %></td>
+				<td><%= pvcrequest.created_at %></td>
+      </tr>
+    <% end %>
+    </tbody>
+   </table>
+ </body>
+</html>

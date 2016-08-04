@@ -1,0 +1,2 @@
+class Pvcrequest < ApplicationRecord
+end
