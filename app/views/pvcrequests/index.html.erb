@@ -30,7 +30,6 @@
 h1 {
 	text-align: center;
 	color: #226389;
-  currentColor;
 }
 
 .focus-highlight td:focus::after, .focus-highlight th:focus::after,
@@ -44,9 +43,7 @@ h1 {
   z-index: -1;
 }
 
-
 body {
-	color: white;
 	background-color: lightgrey;
 }
 table {
@@ -66,72 +63,90 @@ th {
 }
 
 tr {
- background-color: #696767
- color: white;
+ background-color: #696767;
  margin: 1px;
  text-align: center;
 }
+
+.customBackground > td {
+    background-color: #696767;
+}
+
 
 .shaded {
  background-color: #226389;
 }
 
+
 td {
+ background-color: white;
  padding-left: 10px;
  text-align:center;
 }
 .border-bottom {
  border-bottom: solid black 1px;
 }
-</style>
 
-<script type="text/JavaScript">
-    $(document).ready(function(){
-  		$("#pvcTable").tablesorter({sortList: [[0,0], [1,0]] });
-});
-</script>
-<script type="text/JavaScript">
-    $(document).ready(function() {
-      $("table#pvcTable tr:nth-child(even)").addClass("shaded");
-      });
-</script>
+table.tablesorter tbody tr.normal-row td {
+  background: #696767;
+  color: #fff;
+}
+table.tablesorter tbody tr.alt-row td {
+  background: #226389;
+  color: #fff;
+}
+
+table.tablesorter tbody tr:hover td {
+	background: purple;
+	color: #fff;
+}
+
+</style>
 
 <script type="text/JavaScript">
 	$(document).ready (function() {
   	// call the tablesorter plugin
-  	   	$("table").tablesorter({
-    			theme: 'blue'
-  		});
-
-  // Make table cell focusable
-  // http://css-tricks.com/simple-css-row-column-highlighting/
-  		if ( $('.focus-highlight').length ) {
-    			$('.focus-highlight').find('td, th')
-      				.attr('tabindex', '1')
-      		// add touch device support
-      			.on('touchstart', function() {
-        			$(this).focus();
-      			});
-		}
+     		$("#pvcTable").tablesorter({
+    			theme: 'ice',
+					showProcessing: true,
+					headerTemplate : '{content} {icon}',
+		    // initialize zebra striping of the table
+    			widgets: ['zebra', 'scroller_rowHighlight'],
+		    // change the default striping class names
+		    // updated in v2.1 to use widgetOptions.zebra = ["even", "odd"]
+		    // widgetZebra: { css: [ "normal-row", "alt-row" ] } still works
+   		 		widgetOptions : {
+      			zebra : [ "normal-row", "alt-row" ],
+						scroller_rowHighlight : "hover"
+   				}
+     		});
 	});
 </script>
+
+<script type="text/JavaScript">
+    $(document).ready(function(){
+  		$("#pvcTable").tablesorter({
+					sortList: [[0,0], [1,0]] });
+		});
+</script>
+
 </head>
 <body>
 <table id="pvcTable" class="tablesorter">
   <thead>
     <tr>
-       <th>Project Name</th>
-       <th>Claim Name</th>
-       <th>Storage Required</th>
-       <th>Access Mode</th>
-       <th>Current Phase</th>
-			 <th>Requested by Application</th>
-			 <th>Available to Application</th>
+       <th><b>Project Name</b></th>
+       <th><b>Claim Name</b></th>
+       <th><b>Storage Required</b></th>
+       <th><b>Access Mode</b></th>
+       <th><b>Current Phase</b></th>
+			 <th><b>Requested by Application</b></th>
+			 <th><b>Available to Application</b></th>
     <tr>
   </thead>
   <tbody>
     <% @pvcrequests.each do |pvcrequest| %>
-      <tr class="border-bottom">
+      <tr class="border-bottom", class="customBackground">
         <td><%= pvcrequest.namespace %></td>
         <td><%= pvcrequest.name %></td>
         <td><%= pvcrequest.storage %></td>
