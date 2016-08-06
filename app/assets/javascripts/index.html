@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AppJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style> body { padding-bottom: 40px; } </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/appjs_144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/appjs_114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/appjs_72.png">
+    <link rel="apple-touch-icon-precomposed" href="img/ico/appjs_57.png">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="160">
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#home"><img src="img/appjs.png"/></a>
+          <div class="nav-collapse pull-right">
+            <ul class="nav">
+              <li><a href="#why">Why AppJS?</a></li>
+              <li><a href="#download">30 Second Quickstart</a></li>
+              <li><a href="#guide">One Minute Usage Overview</a></li>
+              <li><a href="#contribute">Contribute</a></li>
+              <li><a href="https://twitter.com/appjs" target="_blank">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="home" style="padding-top: 60px;"></div>
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <header class="hero-unit">
+      <div class="inner">
+        <h1>Build Desktop Applications</h1>
+        <p>for Linux, Windows and Mac using HTML, CSS and Javascript</p>
+        <p>
+          <a href="#download" class="btn btn-warning btn-large">Download AppJS (v0.0.20)</a>
+          <a href="https://github.com/appjs/appjs/wiki" class="btn btn-large btn-info">Read Documentation</a>
+        </p>
+        <h4>Deprecation Notice</h4>
+        <p style="font-size:12px;padding:0;margin:0;">AppJS project has not been actively developed for a few years. Please check out <a href='nwjs.io'>NW.js</a> or <a href='http://electron.atom.io/'>Electron</a> instead.</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="why">
+        <div class="page-header">
+          <h1>Why AppJS?</h1>
+        </div>
+        <div class="page-body">
+          <p>Because it is simple and yet powerful. Using AppJS you don't need to be worry about coding cross-platform or learning new languages and tools. You are already familiar with HTML, CSS and Javascript. What is better than this stack for application development? Beside, AppJS uses Chromium at the core so you get latest HTML 5 APIs working. So relax and focus on the task your application should do.</p>
+          <div class="row">
+            <div class="span4">
+              <h3>HTML 5</h3>
+              <p>AppJS allows you to use HTML 5 APIs to create attractive applications from Word Processors to 3D Games. You are no longer limited to default GUI widgets that plaforms force you to use. Creating custom UIs is now only limited to your imagination!</p>
+              <p><a class="btn" href="http://slides.html5rocks.com/" target="_blank">Learn more about HTML 5 &raquo;</a></p>
+            </div>
+            <div class="span4">
+              <h3>CSS 3</h3>
+               <p>Using CSS you can decorate widgets as you like. Create a custom widget in HTML and complete your work with decorating it. Adding shadows, animating elements and transforming objects in 3D space are a few examples of what you can do with CSS 3. </p>
+              <p><a class="btn" href="http://www.css3.info/preview/" target="_blank">Learn more about CSS 3 &raquo;</a></p>
+           </div>
+            <div class="span4">
+              <h3>Node.js</h3>
+              <p>The interesting part of AppJS is that it uses Node.js as the backbone. Node.js has been built to ease the process of developing scalable network applications. But today, you can see Node nearly everywhere! It has a nice API and lots of modules.</p>
+              <p><a class="btn" href="http://nodejs.org" target="_blank">Read more at nodejs.org &raquo;</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download">
+        <div class="page-header">
+          <h1>30 Second Quickstart</h1>
+        </div>
+        <div class="page-body">
+          <p>The below packages include everything needed to get started with AppJS, including Node.js, all dependencies, binaries, and a launcher ready to go out of the box. 1.) Extract to a folder. 2.) Double click on launch. 3.) Hello World.</p>
+          <h2>AppJS 0.0.20 Distributables:</h2>
+          <ul>
+            <li><a href="http://dl.bintray.com/sihorton/appjs/appjs-0.0.20-win32-ia32.zip">Windows</a></li>
+            <li>Linux <a href="http://dl.bintray.com/sihorton/appjs/appjs-0.0.20-linux-ia32.tar.gz">32 bit</a> / <a href="http://dl.bintray.com/sihorton/appjs/appjs-0.0.20-linux-x64.tar.gz">64 bit</a></li>
+            <li><a href="http://dl.bintray.com/sihorton/appjs/appjs-0.0.20-darwin-ia32.zip">Mac OS X</a></li>
+          </ul>
+        </div>
+
+        <p>For Node.js users, AppJS can be also be installed via npm.</p>
+        <pre>npm install appjs</pre>
+        <p>AppJS requires 32bit Node on OS X. <strong>It works on 64bit OS X but Node must be 32bit</strong>. We're working on solving this, but it's a limitation of Chrome itself so it's a work in progress. Help us gain traction by starring this chromium issue.</p>
+
+      </section>
+
+      <section id="guide">
+        <div class="page-header">
+          <h1>One Minute Usage Overview</h1>
+        </div>
+        <div class="page-body">
+          <pre>
+// load appjs
+
+var appjs = require('appjs');
+
+// serve static files from a directory
+appjs.serveFilesFrom(__dirname + '/content');
+
+// handle requests from the browser
+appjs.router.post('/', function(request, response, next){
+  response.send('Hey! How are you ' + request.post('firstname'));
+})
+
+// create a window
+var window = appjs.createWindow({
+  width: 640,
+  height: 460,
+  alpha: false,
+});
+
+// prepare the window when first created
+window.on('create', function(){
+  console.log("Window Created");
+  // window.frame controls the desktop window
+  window.frame.show().center();
+});
+
+// the window is ready when the DOM is loaded
+window.on('ready', function(){
+  console.log("Window Ready");
+  // directly interact with the DOM
+  window.process = process;
+  window.module = module;
+
+  window.addEventListener('keydown', function(e){
+    // show chrome devtools on f12 or commmand+option+j
+    if (e.keyIdentifier === 'F12' || e.keyCode === 74 && e.metaKey && e.altKey) {
+      window.frame.openDevTools();
+    }
+  });
+});
+
+// cleanup code when window is closed
+window.on('close', function(){
+  console.log("Window Closed");
+});</pre>
+          <pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Hello World!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;form action=&quot;/&quot; method=&quot;POST&quot;&gt;
+      &lt;input name=&quot;firstname&quot; type=&quot;text&quot; placeholder=&quot;Firstname&quot;/&gt;
+      &lt;input name=&quot;lastname&quot; type=&quot;text&quot; placeholder=&quot;Lastname&quot;/&gt;
+      &lt;input type=&quot;submit&quot;/&gt;
+    &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+      </section>
+
+      <section id="contribute">
+        <div class="page-header">
+          <h1>We need your help!</h1>
+        </div>
+        <div class="page-body">
+          <p>AppJS is a work in progress and needs a lot of improvement. There are unimplemented stuff waiting for your help! You can find them at github <a href="https://github.com/appjs/appjs/issues">issue tracker</a> or <a href="https://github.com/appjs/appjs">read the code</a> and find <span class="label">@TODO</span> tags! You can also subscribe to <a href="https://groups.google.com/d/forum/appjs-dev" title="AppJS Mailing list" target="_blank">the development mailing list</a> where we talk about AppJS features.</p>
+          <p>There are two areas you can help. If you code in C++ try to implement features that are only supported in one platform or two. We need all three major platforms to work (Mac, Linux and Windows). If you are professional in Javascript and Node.js then you can help us by implementing JS wrappers for C++ APIs.</p>
+          <p>To start contributing, fork git repository from github, clone the forked repository and make your changes according to instructions below. Then send a pull request. We discuss changes you have made. After that you can see your changes merged in the main repository!</p>
+        </div>
+      </section>
+      <footer>
+        <p>&copy; Morteza Milani and Brandon Benvie 2012</p>
+      </footer>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-10798279-7']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
