@@ -8,6 +8,8 @@ Rails.application.configure do
 
   config.web_console.whitelisted_ips = '192.168.0.0/16' 
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   config.cache_classes = false
 
   # Do not eager load code on boot.

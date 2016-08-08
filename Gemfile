@@ -30,6 +30,11 @@ gem 'rack-cors', :require => 'rack/cors'
 # activeuuid added by DJB 8/2/2016
 #
 #gem "activeuuid"
+#
+#
+# devise added by DJB 8/8/2016
+#
+gem 'devise'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
