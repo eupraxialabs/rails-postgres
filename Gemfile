@@ -27,6 +27,13 @@ gem 'rack-cors', :require => 'rack/cors'
 #
 #
 #
+
+gem 'dotenv-rails', :groups => [:development, :test]
+
+gem 'contact_us', '~> 1.1'
+
+#
+#
 # activeuuid added by DJB 8/2/2016
 #
 #gem "activeuuid"
@@ -40,6 +47,8 @@ gem 'devise'
 #
 
 gem 'recaptcha', '~> 3.3'
+
+gem 'bootstrap'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
