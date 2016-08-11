@@ -7,6 +7,15 @@ Rails.application.configure do
   # 
 
   config.web_console.whitelisted_ips = '192.168.0.0/16' 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: "smtp.eupraxialabs.com",
+      port: 587,
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: "rails-sa@eupraxialabs.com",
+      password: "Pr0f1501"
+  }
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 

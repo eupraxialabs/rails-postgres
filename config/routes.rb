@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'pages/services'
   get 'pages/pricing'
   get 'pages/pvm'
+  get 'pages/wso2is'
+  get 'pages/jira'
 
 #  root :to => redirect('/')
   root :to => 'welcome#index'
