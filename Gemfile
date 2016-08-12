@@ -32,6 +32,8 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'contact_us', '~> 1.1'
 
+gem "breadcrumbs_on_rails"
+
 #
 #
 # activeuuid added by DJB 8/2/2016
