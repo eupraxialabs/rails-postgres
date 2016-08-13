@@ -34,6 +34,8 @@ gem 'contact_us', '~> 1.1'
 
 gem "breadcrumbs_on_rails"
 
+gem "formtastic"
+
 #
 #
 # activeuuid added by DJB 8/2/2016
