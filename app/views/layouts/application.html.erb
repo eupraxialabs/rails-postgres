@@ -12,7 +12,7 @@
   <style type="text/css">
 
 .body {
-  padding-top: 20px;
+  padding-top: 10%;
 }
 .navbar-custom {
        color: white;
@@ -129,7 +129,7 @@
         });
      });
   </script>
-
+<!--
 <script>
 
 	var onResize = function() {
@@ -145,9 +145,21 @@
   	onResize();
 	});
 </script>
+-->
+<script>
+	$(window).resize(function () {
+    		$('body').css('padding-top', parseInt($('#menu').css("height"))+10);
+	});
+
+	$(window).load(function () {
+    		$('body').css('padding-top', parseInt($('#menu').css("height"))+10);
+	});
+</script>
 
   <body>
-
+    <ol class="breadcrumb">
+      <%= render_breadcrumbs :tag => :li, :separator => ""%>
+    </ol>
     <nav id="menu" class="navbar navbar-default navbar-fixed-top navbar-custom" role="navigation">
        <div class="container">
          <div class="navbar-header">
@@ -167,16 +179,17 @@
                <a class="dropdown-toggle" data-toggle="dropdown"> Products <span class="caret"></span></a>
                <ul class="dropdown-menu">
                  <!--<li><a href="/pages/products">Persistent Volume Manager</a></li> -->
-                 <li><%=link_to "Blueprint: EL Persistent Volume Manager (OpenShift 3)", "/pvprovisions"%></li>
-                 <li><%=link_to "Blueprint:WSO2 Identity Server (OpenShift 3)", "/pages/wso2is"%></li>
-                 <li><%=link_to "Blueprint:Atlassian Jira (OpenShift 3)", "/pages/jira"%></li>
+                 <li><%=link_to "Blueprint: EL Persistent Volume Manager (OpenShift 3)", pvprovisions_path %></li>
+                 <li><%=link_to "Blueprint:WSO2 Identity Server (OpenShift 3)", pages_wso2is_path %></li>
+                 <li><%=link_to "Blueprint:Atlassian Jira (OpenShift 3)", pages_jira_path %></li>
                </ul>
              </li>
-             <li><%=link_to "Services", "/pages/services"%></li>
-             <li><%=link_to "Professional Services", "/pages/professionalservices"%></li>
-             <li><%=link_to "Pricing", "/pages/pricing"%></li>
-             <li><%=link_to "About Us", "/pages/aboutus"%></li>
-             <li><%=link_to "Contact Us", "/pages/contactus"%></li>
+          <!--   <li><%=link_to "Services", "/pages/services"%></li> -->
+             <li><%=link_to "Services", pages_services_path %></li>
+             <li><%=link_to "Professional Services", pages_professionalservices_path %></li>
+             <li><%=link_to "Pricing", pages_pricing_path %></li>
+             <li><%=link_to "About Us", pages_aboutus_path %></li>
+             <li><%=link_to "Contact Us", pages_contactus_path%></li>
            </ul>
            <p class="navbar-text pull-right">
              <% if user_signed_in? %>
@@ -190,11 +203,6 @@
           </div>
         </div>
 </nav>
-    <p></p>
-    <p></p>
-    <ol class="breadcrumb">
-      <%= render_breadcrumbs :tag => :li, :separator => ""%>
-    </ol>
     <div class="container">
         <%= yield %>
     </div>
