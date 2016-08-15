@@ -1,6 +1,7 @@
 class PvprovisionsController < ApplicationController
   before_action :set_pvprovision, only: [:show, :edit, :update, :destroy]
   add_breadcrumb "pvprovisions", "/pvprovisions"
+#  load_and_authorize_resource
 
   # GET /pvprovisions
   # GET /pvprovisions.json
