@@ -9,7 +9,7 @@ ContactUs.setup do |config|
   config.mailer_from = "donotreply@eupraxialabs.com"
 
   # Configure the e-mail address which should receive the contact form email notifications.
-  config.mailer_to = "admin@eupraxialabs.com"
+  config.mailer_to = "info@eupraxialabs.com"
 
   # ==> Form Configuration
 
@@ -29,6 +29,6 @@ ContactUs.setup do |config|
 
   # Configure the parent action mailer
   # Example:
-  # config.parent_mailer = "ActionMailer::Base"
+  config.parent_mailer = "ActionMailer::Base"
 
 end

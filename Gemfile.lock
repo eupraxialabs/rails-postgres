@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/mshibuya/remotipart.git
+  revision: 88d9a7d55bde66acb6cf3a3c6036a5a1fc991d5e
+  specs:
+    remotipart (1.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -48,6 +54,7 @@ GEM
     breadcrumbs_on_rails (3.0.0)
     builder (3.2.2)
     byebug (9.0.5)
+    choice (0.2.0)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -72,10 +79,16 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
+    font-awesome-rails (4.6.3.1)
+      railties (>= 3.2, < 5.1)
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
+    formtastic-bootstrap (3.1.1)
+      formtastic (>= 3.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    haml (4.0.7)
+      tilt
     i18n (0.7.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -87,6 +100,9 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (2.0.2)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -101,6 +117,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    nested_form (0.3.2)
     nio4r (1.2.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -111,6 +128,9 @@ GEM
     puma (3.6.0)
     rack (2.0.1)
     rack-cors (0.4.0)
+    rack-pjax (1.0.0)
+      nokogiri (~> 1.5)
+      rack (>= 1.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0)
@@ -128,8 +148,26 @@ GEM
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6.0)
+    rails-erd (1.5.0)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_admin (1.0.0.rc)
+      builder (~> 3.1)
+      coffee-rails (~> 4.0)
+      font-awesome-rails (>= 3.0, < 5)
+      haml (~> 4.0)
+      jquery-rails (>= 3.0, < 5)
+      jquery-ui-rails (~> 5.0)
+      kaminari (~> 0.14)
+      nested_form (~> 0.3)
+      rack-pjax (>= 0.7)
+      rails (>= 4.0, < 6)
+      remotipart (~> 1.0)
+      sass-rails (>= 4.0, < 6)
     railties (5.0.0)
       actionpack (= 5.0.0)
       activesupport (= 5.0.0)
@@ -144,6 +182,7 @@ GEM
       json
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
+    ruby-graphviz (1.2.2)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -195,6 +234,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   formtastic
+  formtastic-bootstrap
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails
@@ -203,7 +243,10 @@ DEPENDENCIES
   puma (~> 3.0)
   rack-cors
   rails (~> 5.0.0)
+  rails-erd
+  rails_admin (>= 1.0.0.rc)
   recaptcha (~> 3.3)
+  remotipart!
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

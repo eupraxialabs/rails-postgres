@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.png' %>
+
   </head>
   <style type="text/css">
 
@@ -117,7 +119,7 @@
     background-color: #968d8d;
   }
 }
-body {     
+body {
   padding-top: 2px;
 }
 
@@ -196,7 +198,7 @@ body {
              <li><%=link_to "Professional Services", pages_professionalservices_path %></li>
              <li><%=link_to "Pricing", pages_pricing_path %></li>
              <li><%=link_to "About Us", pages_aboutus_path %></li>
-             <li><%=link_to "Contact Us", pages_contactus_path%></li>
+             <li><%=link_to "Contact Us", "/contact-us"%></li>
            </ul>
            <p class="navbar-text pull-right">
              <% if user_signed_in? %>
@@ -215,7 +217,7 @@ body {
     </div>
     <footer>
       <div class="container">
-          <b>Eupraxia Labs, L.L.C. 2016</b>
+           <p class="text-muted">Copyright &copy 2016, Eupraxia Labs, LLC</p> 
         </div>
 </footer>
   </body>

@@ -36,6 +36,13 @@ gem "breadcrumbs_on_rails"
 
 gem "formtastic"
 
+gem 'formtastic-bootstrap'
+
+gem "rails-erd"
+
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+
 #
 #
 # activeuuid added by DJB 8/2/2016
