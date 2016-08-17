@@ -9,7 +9,8 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 Dotenv::Railtie.load
 
-module RailsPostgres
+#module RailsPostgres
+module EupraxiaLabs
   class Application < Rails::Application
     config.active_record.primary_key = :uuid
     # Settings in config/environments/* take precedence over those specified here.

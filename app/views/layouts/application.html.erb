@@ -6,19 +6,26 @@
     <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css"> -->
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag 'favicon.png' %>
-
   </head>
   <style type="text/css">
 
 .navbar-custom {
-       color: white;
+       color: #226389;
        background-color: #226389;
        background-image: none;
     }
+.navbar-fixed-top {
+  min-height: 90px;
+}
 
+.nav {
+  font-size: 16px;
+  font: sans-serif;
+}
 .navbar-brand img {
   height: 50px;
   width: 50px;
@@ -32,7 +39,7 @@
 }
 .navbar-default {
   background-color: #226389;
-  border-color: #968d8d;
+  border-color: orange;
 }
 .navbar-default .navbar-brand {
   color: #ecf0f1;
@@ -101,33 +108,39 @@
   color: #ecf0f1;
 }
 .navbar-default .navbar-link:hover {
-  color: #fff3f3;
+  color: orange !important;
 }
+#iFooter{
+  font-style: italic;
+}
+
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ecf0f1;
+    color: #ecf0f1 !important;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #fff3f3;
+    color: #fff3f3 !important;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #fff3f3;
-    background-color: #968d8d;
+    color: #fff3f3 !important;
+    background-color: #968d8d !important;
   }
 }
 body {
-  padding-top: 2px;
+  padding-top:115px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .breadcrumb{
     background-color: none;
-    color: black;
+    color: #226389;
 
 }
+
 
   </style>
 <script>
@@ -157,11 +170,11 @@ body {
 -->
 <script>
 	$(window).resize(function () {
-    		$('body').css('padding-top', parseInt($('#menu').css("height"))+10);
+    		$('body').css('padding-top', parseInt($('#menu').css("height"))+20);
 	});
 
 	$(window).load(function () {
-    		$('body').css('padding-top', parseInt($('#menu').css("height"))+10);
+    		$('body').css('padding-top', parseInt($('#menu').css("height"))+20);
 	});
 </script>
 
@@ -183,9 +196,9 @@ body {
          <div class="collapse navbar-collapse">
            <ul class="nav navbar-nav">
             <!-- <li class="active"><a href="#">Home</a></li> -->
-             <li><%=link_to "Home", "/welcome/index"%></li>
+             <li><%=link_to "EL Advantage", "/welcome/index"%></li>
              <li class="dropdown">
-               <a class="dropdown-toggle" data-toggle="dropdown"> Products <span class="caret"></span></a>
+               <a class="dropdown-toggle" data-toggle="dropdown"> Products</span></a>
                <ul class="dropdown-menu">
                  <!--<li><a href="/pages/products">Persistent Volume Manager</a></li> -->
                  <li><%=link_to "Blueprint: EL Persistent Volume Manager (OpenShift 3)", pvprovisions_path %></li>
@@ -201,6 +214,10 @@ body {
              <li><%=link_to "Contact Us", "/contact-us"%></li>
              <li><%=link_to "Admin", "/admin"%></li>
            </ul>
+           <form class="form-inline pull-xs-right">
+              <input class="form-control" type="text" placeholder="Search">
+              <button class="btn btn-success-outline" type="submit">Search</button>
+           </form>
            <p class="navbar-text pull-right">
              <% if user_signed_in? %>
                 Howdy, <strong><%= current_user.email %></strong>.
@@ -212,14 +229,22 @@ body {
             <% end %>
           </div>
         </div>
+
+
 </nav>
     <div class="container">
         <%= yield %>
     </div>
-    <footer>
-      <div class="container">
-           <p class="text-muted">Copyright &copy 2016, Eupraxia Labs, LLC</p>
-        </div>
+
+<div id="jumbo" class="jumbotron">
+    <div class="container">
+        <img src="/assets/Eupraxia_Logo_2C_RGB-300x41.png">
+    </div>
+</div>
+<footer>
+  <div id="iFooter" class="container">
+       <p class="text-muted">Copyright &copy 2016, Eupraxia Labs, LLC</p>
+    </div>
 </footer>
   </body>
 </html>
