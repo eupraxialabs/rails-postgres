@@ -1,12 +1,12 @@
 class PagesController < ApplicationController
-  
+
   skip_before_action :authenticate_user!, :except => [:aboutus, :professionalservices]
 #  before_action :authenticate_user!, :except => [:professionalservices]
   skip_before_action :authenticate_user!, :except => [:pricing]
   skip_before_action :authenticate_user!, :except => [:jira]
   skip_before_action :authenticate_user!, :except => [:wso2is]
-  def services
-    add_breadcrumb "Services", pages_services_path
+  def solutions
+    add_breadcrumb "Solutions", pages_solutions_path
   end
 
   def professionalservices
@@ -28,7 +28,7 @@ class PagesController < ApplicationController
   def jira
     add_breadcrumb "Atlassian Jira", pages_jira_path
   end
-  
+
   def wso2is
     add_breadcrumb "WSO2 Identity Server", pages_wso2is_path
   end

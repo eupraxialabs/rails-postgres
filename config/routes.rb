@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'pages/contactus'
   get 'pages/professionalservices'
   get 'pages/products'
-  get 'pages/services'
+  get 'pages/solutions'
   get 'pages/pricing'
   get 'pages/pvm'
   get 'pages/wso2is'

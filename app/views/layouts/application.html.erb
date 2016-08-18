@@ -4,11 +4,15 @@
     <title>EL:Blueprint</title>
     <%= csrf_meta_tags %>
     <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css"> -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css">
+    -->
+    <!-- <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-eval' => false %>
+    <%= javascript_include_tag params[:controller] %>
     <%= favicon_link_tag 'favicon.png' %>
   </head>
   <style type="text/css">
@@ -131,8 +135,9 @@
   }
 }
 body {
-  padding-top:115px;
+  padding-top: 120px;
   font-family: "Open Sans", sans-serif;
+  font-size: 14px;
 }
 
 .breadcrumb{
@@ -140,7 +145,68 @@ body {
     color: #226389;
 
 }
-
+.dropdown-large {
+  position: static !important;
+}
+.dropdown-menu-large {
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 20px 0px;
+}
+.dropdown-menu-large > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.dropdown-menu-large > li > ul > li {
+  list-style: none;
+}
+.dropdown-menu-large > li > ul > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #333333;
+  white-space: normal;
+}
+.dropdown-menu-large > li ul > li > a:hover,
+.dropdown-menu-large > li ul > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #f5f5f5;
+}
+.dropdown-menu-large .disabled > a,
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus {
+  color: #999999;
+}
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+.dropdown-menu-large .dropdown-header {
+  color: white;
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  .dropdown-menu-large {
+    margin-left: 0 ;
+    margin-right: 0 ;
+  }
+  .dropdown-menu-large > li {
+    margin-bottom: 30px;
+  }
+  .dropdown-menu-large > li:last-child {
+    margin-bottom: 0;
+  }
+  .dropdown-menu-large .dropdown-header {
+    padding: 3px 15px !important;
+  }
+}
 
   </style>
 <script>
@@ -151,23 +217,6 @@ body {
         });
      });
   </script>
-<!--
-<script>
-
-	var onResize = function() {
-  	// apply dynamic padding at the top of the body according to the fixed navbar height
- 	 $("body").css("padding-top", $(".navbar-fixed-top").height());
-	};
-
-	// attach the function to the window resize event
-	$(window).resize(onResize);
-
-	// call it also when the page is ready after load or reload
-	$(function() {
-  	onResize();
-	});
-</script>
--->
 <script>
 	$(window).resize(function () {
     		$('body').css('padding-top', parseInt($('#menu').css("height"))+20);
@@ -197,17 +246,65 @@ body {
            <ul class="nav navbar-nav">
             <!-- <li class="active"><a href="#">Home</a></li> -->
              <li><%=link_to "EL Advantage", "/welcome/index"%></li>
-             <li class="dropdown">
-               <a class="dropdown-toggle" data-toggle="dropdown"> Products</span></a>
-               <ul class="dropdown-menu">
-                 <!--<li><a href="/pages/products">Persistent Volume Manager</a></li> -->
-                 <li><%=link_to "Blueprint: EL Persistent Volume Manager (OpenShift 3)", pvprovisions_path %></li>
-                 <li><%=link_to "Blueprint:WSO2 Identity Server (OpenShift 3)", pages_wso2is_path %></li>
-                 <li><%=link_to "Blueprint:Atlassian Jira (OpenShift 3)", pages_jira_path %></li>
-               </ul>
-             </li>
-          <!--   <li><%=link_to "Services", "/pages/services"%></li> -->
-             <li><%=link_to "Services", pages_services_path %></li>
+             <li class="dropdown dropdown-large">
+       				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products</b></a>
+       				<ul class="dropdown-menu dropdown-menu-large row">
+       					<li class="col-sm-3">
+       						<ul>
+       							<li class="dropdown-header">Cloud Management</li>
+                     <li><%=link_to "Blueprint: EL Persistent Volume Manager (OpenShift 3)", pvprovisions_path %></li>
+       							<li><a href="#">ManageIQ</a></li>
+       							<li><a href="#">Examples</a></li>
+       							<li class="divider"></li>
+       							<li class="dropdown-header">Identity Management and Security</li>
+       							<li><a href="#">CyberSAFE</a></li>
+       							<li><%=link_to "Blueprint:WSO2 Identity Server (OpenShift 3)", pages_wso2is_path %></li>
+       							<li><a href="#">Blueprint:Shibboleth IdP</a></li>
+       							<li><a href="#">Blueprint: OpenVAS</a></li>
+       						</ul>
+       					</li>
+                <li class="col-sm-3">
+      						<ul>
+      							<li class="dropdown-header">Continuous Integration</li>
+      							<li><a href="#">Basic example</a></li>
+      							<li><a href="#">Button toolbar</a></li>
+      							<li><a href="#">Sizing</a></li>
+      							<li><a href="#">Nesting</a></li>
+      							<li><a href="#">Vertical variation</a></li>
+      							<li class="divider"></li>
+      							<li class="dropdown-header">Customer Relationship Management</li>
+      							<li><a href="#">Single button dropdowns</a></li>
+      						</ul>
+      					</li>
+                <li class="col-sm-3">
+      						<ul>
+      							<li class="dropdown-header">Content Management Systems</li>
+      							<li><a href="#">Basic example</a></li>
+      							<li><a href="#">Sizing</a></li>
+      							<li><a href="#">Checkboxes and radio addons</a></li>
+      							<li class="divider"></li>
+      							<li class="dropdown-header">Storage Management</li>
+      							<li><a href="#">GlusterFS</a></li>
+      							<li><a href="#">Ceph</a></li>
+      							<li><a href="#">OCFS</a></li>
+      						</ul>
+      					</li>
+      					<li class="col-sm-3">
+      						<ul>
+      							<li class="dropdown-header">Enterprise File Sync and Share (EFSS)</li>
+      							<li><a href="#">Default navbar</a></li>
+      							<li><a href="#">Buttons</a></li>
+      							<li><a href="#">Text</a></li>
+      							<li><a href="#">Non-nav links</a></li>
+      							<li><a href="#">Component alignment</a></li>
+      							<li><a href="#">Fixed to top</a></li>
+      							<li><a href="#">Fixed to bottom</a></li>
+      							<li><a href="#">Static top</a></li>
+      							<li><a href="#">Inverted navbar</a></li>
+      						</ul>
+      					</li>
+              </ul>
+             <li><%=link_to "Solutions", pages_solutions_path %></li>
              <li><%=link_to "Professional Services", pages_professionalservices_path %></li>
              <li><%=link_to "Pricing", pages_pricing_path %></li>
              <li><%=link_to "About Us", pages_aboutus_path %></li>

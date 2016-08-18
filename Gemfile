@@ -65,6 +65,10 @@ gem 'recaptcha', '~> 3.3'
 
 gem 'bootstrap'
 
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+
+gem 'jquery-turbolinks';
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
