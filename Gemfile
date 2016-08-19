@@ -46,6 +46,8 @@ gem 'rails_admin', '>= 1.0.0.rc'
 
 gem "cancancan"
 
+gem 'rails-assets-tether', '>= 1.1.0'
+
 
 #
 #
@@ -65,9 +67,17 @@ gem 'recaptcha', '~> 3.3'
 
 gem 'bootstrap'
 
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+#gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
 gem 'jquery-turbolinks';
+
+gem 'bootstrap-sass', '~> 3.2.0'
+
+
+gem 'autoprefixer-rails'
+
+
+gem 'sprockets', '~> 3.7'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

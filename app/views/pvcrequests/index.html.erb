@@ -2,7 +2,13 @@
 <head>
 <p id="notice"><%= notice %></p>
 
-<h1>Persistent Volume Claims</h1>
+<%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-eval' => false %>
+<%= javascript_include_tag params[:controller] %>
+<%= favicon_link_tag 'favicon.png' %>
+
+<h2>Persistent Volume Claims</h2>
 
 <link
 	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
@@ -45,6 +51,7 @@ h1 {
 
 body {
 	background-color: lightgrey;
+	font-size: 14px;
 }
 table {
  border: 1px black solid;
