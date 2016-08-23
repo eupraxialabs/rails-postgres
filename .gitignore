@@ -18,3 +18,5 @@
 
 #ignore environment info
 .env
+#ignore originals
+.orig
