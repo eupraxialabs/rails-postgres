@@ -18,5 +18,7 @@
 
 #ignore environment info
 .env
+
 #ignore originals
-.orig
+
+*.orig
