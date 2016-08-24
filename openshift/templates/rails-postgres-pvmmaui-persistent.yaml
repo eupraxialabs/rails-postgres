@@ -9,6 +9,7 @@ metadata:
     iconClass: icon-ruby
 labels:
   template: rails-postgres-pvmmaui
+  application: rails-postgres-pvmmaui
 objects:
 - kind: Service
   apiVersion: v1
@@ -230,7 +231,7 @@ objects:
             tcpSocket:
               port: 5432
           volumeMounts:
-          - name: data
+          - name: "${DATABASE_SERVICE_NAME}-data"
             mountPath: "/var/lib/pgsql/data"
           env:
           - name: POSTGRESQL_USER
