@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20160814130642) do
     t.string   "volumename",          limit: 100, default: "replicated-volume",                      null: false
     t.integer  "pvsequencenumber",                default: -> { "nextval('pvsequence'::regclass)" }
     t.uuid     "pvuid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["pvcuid"], name: "pvcuid_provision_constraint", unique: true, using: :btree
   end
 
