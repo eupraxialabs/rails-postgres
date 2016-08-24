@@ -50,6 +50,8 @@ objects:
       git:
         uri: "${SOURCE_REPOSITORY_URL}"
         ref: "${SOURCE_REPOSITORY_REF}"
+      sourceSecret:
+      name: "sshsecret"
       contextDir: "${CONTEXT_DIR}"
     strategy:
       type: Source
@@ -64,7 +66,7 @@ objects:
     output:
       to:
         kind: ImageStreamTag
-        name: "${NAME}:2.1"
+        name: "${NAME}:1.1"
     triggers:
     - type: ImageChange
     - type: ConfigChange
