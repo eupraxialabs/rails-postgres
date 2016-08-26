@@ -44,7 +44,7 @@ objects:
   metadata:
     name: "${NAME}"
     annotations:
-      description: Defines how to build the application
+      description: Defines how to build the application.
   spec:
     source:
       type: Git
@@ -60,7 +60,7 @@ objects:
         from:
           kind: ImageStreamTag
           namespace: "${NAMESPACE}"
-          name: ruby2323232323232323232323232323232323232323232323:2.3
+          name: ruby23:2.3
         env:
         - name: RUBYGEM_MIRROR
           value: "${RUBYGEM_MIRROR}"
