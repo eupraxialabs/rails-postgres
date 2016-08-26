@@ -32,7 +32,7 @@ gem 'rack-cors', :require => 'rack/cors'
 
 gem 'contact_us', '~> 1.1'
 
-gem "breadcrumbs_on_rails"
+gem "breadcrumbs_on_rails", '~>3.0.1'
 
 gem "formtastic"
 
