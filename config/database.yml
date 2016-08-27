@@ -19,6 +19,7 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
+
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
@@ -43,7 +44,7 @@ development:
   # domain sockets, so uncomment these lines.
   #host: localhost
 
-   host: <%= ENV['POSTGRESQL_SERVICE_HOST'] %>
+  host: <%= ENV['POSTGRESQL_SERVICE_HOST'] %>
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
