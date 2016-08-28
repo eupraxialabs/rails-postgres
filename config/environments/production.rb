@@ -1,5 +1,26 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  #
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+# Since we are not dealing with a well-known CA in DEV or a matching cert:
+# # Getting this error  ==== >>>>  OpenSSL::SSL::SSLError: hostname "smtp.eupraxialabs.com" does not match the server certificate
+# # So specify the openssl mode as "none
+# #
+       openssl_verify_mode: "none",
+       address: "smtp.eupraxialabs.com",
+       port: 587,
+       authentication: "plain",
+       enable_starttls_auto: true,
+       user_name: "rails-sa@eupraxialabs.com",
+       password: "$!!pa33w0Rd"
+  }
+#
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.assets.precompile += %w( *.js ^[^_]*.css *.css.erb )
 
   # Code is not reloaded between requests.
   config.cache_classes = true
