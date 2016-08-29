@@ -73,13 +73,16 @@ gem 'jquery-turbolinks';
 
 #gem 'bootstrap-sass', '~> 3.2.0'
 
-gem 'bootstrap-sass', '3.2.0.2'
+#gem 'bootstrap-sass', '3.2.0.2'
 
-
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
 
 
+
 gem 'sprockets', '~> 3.7'
+
+#gem 'bootstrap-sprockets' 
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

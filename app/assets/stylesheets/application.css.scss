@@ -13,9 +13,10 @@
  */
 /*@import "bootstrap-sprockets";  */
 @import "jquery-ui";
-@import "bootstrap-sprockets";
 /* @import "bootstrap"; */
 @import "formtastic";
 @import "formtastic-bootstrap";
 @import "formtastic_changes";
 @import "welcome";
+@import "bootstrap-sprockets"
+@import "bootstrap"
