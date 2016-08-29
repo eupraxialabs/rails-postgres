@@ -14,9 +14,9 @@
 //= require jquery-ui
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require bootstrap
 //= require bootstrap-sprockets
 //= require tether
-// = require_self
+//= require_self
 //= require turbolinks
 //= require_tree .
-$('.dropdown-toggle').dropdown();
