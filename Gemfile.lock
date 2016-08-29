@@ -231,7 +231,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap
-  bootstrap-sass (~> 3.2.0)
+  bootstrap-sass (= 3.2.0.2)
   breadcrumbs_on_rails (~> 3.0.1)
   byebug
   cancancan
