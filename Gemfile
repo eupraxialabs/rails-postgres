@@ -80,7 +80,9 @@ gem 'autoprefixer-rails'
 
 
 
-gem 'sprockets', '~> 3.7'
+#gem 'sprockets', '~> 3.7'
+
+gem 'sprockets'
 
 #gem 'bootstrap-sprockets' 
 
