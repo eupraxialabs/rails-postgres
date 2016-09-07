@@ -319,7 +319,7 @@ parameters:
   required: true
 - name: POSTGRESQL_MAX_CONNECTIONS
   displayName: Maximum Database Connections
-  value: '100'
+  value: '120'
 - name: POSTGRESQL_SHARED_BUFFERS
   displayName: Shared Buffer Amount
   value: 12MB
