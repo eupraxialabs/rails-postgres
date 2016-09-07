@@ -27,6 +27,11 @@ gem 'rack-cors', :require => 'rack/cors'
 #
 #
 #
+#
+
+# add centralized logging
+
+gem 'fluent-plugin-elasticsearch', '~> 1.5'
 
 #gem 'dotenv-rails', :groups => [:development, :test]
 

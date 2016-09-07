@@ -74,8 +74,6 @@ objects:
     - type: GitHub
       github:
         secret: "${GITHUB_WEBHOOK_SECRET}"
-    postCommit:
-      script: bundle exec rake test
 - kind: DeploymentConfig
   apiVersion: v1
   metadata:
@@ -90,7 +88,7 @@ objects:
           failurePolicy: Abort
           execNewPod:
             command:
-            - "./schemaLoad-database.sh"
+            - ls
             containerName: "${NAME}"
     triggers:
     - type: ImageChange
@@ -100,7 +98,7 @@ objects:
         - rails-postgres-pvmmaui
         from:
           kind: ImageStreamTag
-          name: "${NAME}:latest"
+          name: "${NAME}:1.1"
     - type: ConfigChange
     replicas: 1
     selector:
@@ -215,21 +213,6 @@ objects:
           image: " "
           ports:
           - containerPort: 5432
-          readinessProbe:
-            timeoutSeconds: 1
-            initialDelaySeconds: 5
-            exec:
-              command:
-              - "/bin/sh"
-              - "-i"
-              - "-c"
-              - psql -h 127.0.0.1 -U ${POSTGRESQL_USER} -q -d ${POSTGRESQL_DATABASE}
-                -c 'SELECT 1'
-          livenessProbe:
-            timeoutSeconds: 1
-            initialDelaySeconds: 30
-            tcpSocket:
-              port: 5432
           volumeMounts:
           - name: "${DATABASE_SERVICE_NAME}-data"
             mountPath: "/var/lib/pgsql/data"
@@ -272,7 +255,7 @@ parameters:
   displayName: Git Repository URL
   required: true
   description: The URL of the repository with your application source code.
-  value: https://github.com/eupraxialabs/rails-postgres
+  value: https://davidjbrewer:g!thu33@github.com/eupraxialabs/rails-postgres
 - name: SOURCE_REPOSITORY_REF
   displayName: Git Reference
   description: Set this to a branch name, tag or other ref of your repository if you
@@ -344,4 +327,3 @@ parameters:
   displayName: Custom RubyGems Mirror URL
   description: The custom RubyGems mirror URL
   value: ''
-
