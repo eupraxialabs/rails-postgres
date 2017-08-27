@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Added 8/26/2017 by David J. Brewer
+gem 'patternfly-sass', '~> 3.23', '>= 3.23.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
